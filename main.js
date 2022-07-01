@@ -1,1 +1,3 @@
-# Proyecto-2
+import { inicio } from "./menu/funcionesMenu.js";
+
+inicio()
