@@ -1,6 +1,7 @@
 import { Menu } from "./menu.js"
+import { character } from "./CharCreation.js"
 
-const menuInicio = new Menu('Bienvenido al juego nombre',['Start', 'Config', 'Clave secreta'])//la clave secreta debe desbloquear algo especial, arma armadura
+const menuInicio = new Menu('Bienvenido al juego nombre',['Start', 'Config'])//Toca pensar en donde la colocamos
 const configMenu = new Menu ('Configuracion',['Color de Texto','Cambiar Nombre','volver'])
 const elecColorTexto = new Menu('Elija el color de lo que desea cambiar',['Mensaje de Bienvenida', 'Menu de opciones', 'Volver'])
 const colorMensaje = new Menu('Seleccione un color para el mensaje de inicio', ['Rojo', 'Rosado Fuerte', 'Azul', 'volver'])
@@ -12,7 +13,8 @@ export function inicio(){
 menuInicio.mostrarOpciones()
 const respUser = menuInicio.getUserInput(menuInicio);
     if(respUser === 0){
-        console.log('play game');
+        console.log('Ahora tienes que crear tu personaje')
+        character();
     }else if(respUser === 1){
         menuConfig();
     }else if(respUser === 2){
