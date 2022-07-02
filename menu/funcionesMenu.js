@@ -1,7 +1,7 @@
 import { Menu } from "./menu.js"
 import { character } from "./CharCreation.js"
 
-const menuInicio = new Menu('Bienvenido al juego nombre',['Start', 'Config'])//Toca pensar en donde la colocamos pero por ahora va a ser 123, revisa en CharCreation
+const menuInicio = new Menu('Bienvenido al juego nombre',['Start', 'Config'])//Toca pensar en donde la colocamos
 const configMenu = new Menu ('Configuracion',['Color de Texto','Cambiar Nombre','volver'])
 const elecColorTexto = new Menu('Elija el color de lo que desea cambiar',['Mensaje de Bienvenida', 'Menu de opciones', 'Volver'])
 const colorMensaje = new Menu('Seleccione un color para el mensaje de inicio', ['Rojo', 'Rosado Fuerte', 'Azul', 'volver'])
