@@ -26,10 +26,10 @@ import ColorTexto from "./texto.js";
     getUserInput(obj){
         let resUser = prompt('')
         while(true){
-            if(this.#funValidacion(resUser)){
+            if(this.#funValidacion(resUser) && resUser <= this.opciones.length){
                 return resUser -1}
             else{
-                new ColorTexto(`Respuesta invalida, debe ingresar un numero.\nintente nuevamente:`,"yellow").print()
+                new ColorTexto(`Respuesta invalida, debe ingresar un numero valido.\nintente nuevamente:`,"yellow").print()
                 obj.mostrarOpciones()
                 resUser = prompt('')
             }
