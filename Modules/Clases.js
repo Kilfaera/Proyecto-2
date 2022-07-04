@@ -1,4 +1,4 @@
-export class clase{
+export class base{
     constructor(nombre, clase, hp, at, ap){
         this.nombre = nombre
         this.clase = clase
@@ -6,8 +6,11 @@ export class clase{
         this.at = at
         this.ap = ap
     }
-    stats(){
-        console.log(`Clase: ${this.clase}\nVida: ${this.hp}\nAtaque: ${this.at}\nPoder de habilidad: ${this.ap}`)
-    }
 }
 
+
+export class player extends base{
+    constructor(username, clase, hp, at , ap, mp){
+        super()
+    }
+}

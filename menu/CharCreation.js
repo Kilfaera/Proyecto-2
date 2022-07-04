@@ -1,5 +1,5 @@
-import { clase } from "../Modules/Clases.js"
-export let personaje
+import { base } from "../Modules/Clases.js"
+export let player
 export function character(){
     let validate, confirm = false, hp, at, ap, clase1
     let nombre = prompt("¿Que nombre deseas para tu personaje?\n")
@@ -32,16 +32,16 @@ export function character(){
     }
     switch(clase1) {
         case 1:   
-            personaje = new clase(nombre, "Guerrero", 700, 70, 30)
+            player = new base(nombre, "Guerrero", 700, 70, 30)
             break;
         case 2:
-            personaje = new clase(nombre, "Paladin", 1000, 40, 50)
+            player = new base(nombre, "Paladin", 1000, 40, 50)
             break;
         case 3: 
-            personaje = new clase(nombre, "Mago", 600, 20, 100)
+            player = new base(nombre, "Mago", 600, 20, 100)
             break;
         case 4:
-            personaje = new clase(nombre, "Berserker", 400, 140, 0)
+            player = new base(nombre, "Berserker", 400, 140, 0)
             break;
     } 
     
