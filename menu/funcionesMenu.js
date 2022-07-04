@@ -1,5 +1,5 @@
 import { Menu } from "./menu.js"
-import { character } from "./CharCreation.js"
+import { nombrePj } from "../Personaje/creacionPersonaje.js"
 
 const menuInicio = new Menu('Bienvenido al juego de la vida',['Start', 'Config','clave secreta'])//Toca pensar en donde la colocamos
 const configMenu = new Menu ('Configuracion',['Color de Texto','volver'])
@@ -14,7 +14,7 @@ menuInicio.mostrarOpciones()
 const respUser = menuInicio.getUserInput(menuInicio);
     if(respUser === 0){
         console.log('%cCREACION DE PERSONAJE','color:red')
-        character();
+        nombrePj();
     }else if(respUser === 1){
         menuConfig();
     }else if(respUser === 2){

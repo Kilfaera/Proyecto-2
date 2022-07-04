@@ -1,4 +1,4 @@
-export class clase{
+export class Clase{
     constructor(nombre, clase, hp, at, ap){
         this.nombre = nombre
         this.clase = clase

@@ -19,7 +19,7 @@ async function cargaGame(){
         console.log(".")
         console.log(pantaCarga.pantCarga.slice(0,charPosition))
         charPosition++
-        },300)
+        },250)
         })
            
 }
