@@ -7,7 +7,7 @@ export class Clase{
         this.ap = ap
     }
     stats(){
-        console.log(`Clase: ${this.clase}\nVida: ${this.hp}\nAtaque: ${this.at}\nPoder de habilidad: ${this.ap}`)
+        console.log(`%cClase: ${this.clase}\nVida: ${this.hp}\nAtaque: ${this.at}\nPoder de habilidad: ${this.ap}`,"color:yellow")
     }
 }
 

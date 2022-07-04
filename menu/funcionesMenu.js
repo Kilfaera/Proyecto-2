@@ -1,5 +1,6 @@
 import { Menu } from "./menu.js"
-import { nombrePj } from "../Personaje/creacionPersonaje.js"
+import { nombrePj } from "../Personaje/creacionPersonaje.js";
+import {selecClasePj, confirmSeleccion} from "../Personaje/creacionPersonaje.js";
 
 const menuInicio = new Menu('Bienvenido al juego de la vida',['Start', 'Config','clave secreta'])//Toca pensar en donde la colocamos
 const configMenu = new Menu ('Configuracion',['Color de Texto','volver'])
@@ -61,6 +62,8 @@ function menuConfig(){
                 elecColorTexto.SetcolorMensaje('red');
                 colorMensaje.SetcolorMensaje('red');
                 colorMenu.SetcolorMensaje('red');
+                selecClasePj.SetcolorMensaje('red');
+                confirmSeleccion.SetcolorMensaje('red');
                 colorTexto();
                 break;
             case 1:
@@ -69,6 +72,8 @@ function menuConfig(){
                 elecColorTexto.SetcolorMensaje('#FF1493');
                 colorMensaje.SetcolorMensaje('#FF1493');
                 colorMenu.SetcolorMensaje('#FF1493');
+                selecClasePj.SetcolorMensaje('#FF1493');
+                confirmSeleccion.SetcolorMensaje('#FF1493');
                 colorTexto();
                 break
             case 2:
@@ -77,6 +82,8 @@ function menuConfig(){
                 elecColorTexto.SetcolorMensaje('blue');
                 colorMensaje.SetcolorMensaje('blue');
                 colorMenu.SetcolorMensaje('blue');
+                selecClasePj.SetcolorMensaje('blue');
+                confirmSeleccion.SetcolorMensaje('blue');
                 colorTexto();
                 break;
             case 3:
@@ -92,7 +99,9 @@ function menuConfig(){
                 configMenu.SetcolorMenuOpciones('orange')
                 elecColorTexto.SetcolorMenuOpciones('orange')
                 colorMensaje.SetcolorMenuOpciones('orange')
-                colorMenu.SetcolorMenuOpciones('orange')                
+                colorMenu.SetcolorMenuOpciones('orange')
+                selecClasePj.SetcolorMenuOpciones('orange');
+                confirmSeleccion.SetcolorMenuOpciones('orange');         
                 colorTexto()
                 break;
             case 1:
@@ -101,14 +110,18 @@ function menuConfig(){
                 elecColorTexto.SetcolorMenuOpciones('#8A2BE2')
                 colorMensaje.SetcolorMenuOpciones('#8A2BE2')
                 colorMenu.SetcolorMenuOpciones('#8A2BE2') 
+                selecClasePj.SetcolorMenuOpciones('#8A2BE2');
+                confirmSeleccion.SetcolorMenuOpciones('#8A2BE2');
                 colorTexto();
                 break;
             case 2:
                 menuInicio.SetcolorMenuOpciones('#FF00FF');
-                configMenu.SetcolorMenuOpciones('#FF00FF')
-                elecColorTexto.SetcolorMenuOpciones('#FF00FF')
-                colorMensaje.SetcolorMenuOpciones('#FF00FF')
-                colorMenu.SetcolorMenuOpciones('#FF00FF') 
+                configMenu.SetcolorMenuOpciones('#FF00FF');
+                elecColorTexto.SetcolorMenuOpciones('#FF00FF');
+                colorMensaje.SetcolorMenuOpciones('#FF00FF');
+                colorMenu.SetcolorMenuOpciones('#FF00FF');
+                selecClasePj.SetcolorMenuOpciones('#FF00FF');
+                confirmSeleccion.SetcolorMenuOpciones('#FF00FF');
                 colorTexto();
                 break;
             case 3:
