@@ -1,4 +1,4 @@
-import { clase } from "../Modules/Clases.js"
+import { Clase } from "../Modules/Clases.js"
 export let personaje
 export function character(){
     let validate, confirm = false, hp, at, ap, clase1
@@ -32,16 +32,16 @@ export function character(){
     }
     switch(clase1) {
         case 1:   
-            personaje = new clase(nombre, "Guerrero", 700, 70, 30)
+            personaje = new Clase(nombre, "Guerrero", 700, 70, 30)
             break;
         case 2:
-            personaje = new clase(nombre, "Paladin", 1000, 40, 50)
+            personaje = new Clase(nombre, "Paladin", 1000, 40, 50)
             break;
         case 3: 
-            personaje = new clase(nombre, "Mago", 600, 20, 100)
+            personaje = new Clase(nombre, "Mago", 600, 20, 100)
             break;
         case 4:
-            personaje = new clase(nombre, "Berserker", 400, 140, 0)
+            personaje = new Clase(nombre, "Berserker", 400, 140, 0)
             break;
     } 
     
