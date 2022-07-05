@@ -1,7 +1,6 @@
 import { Menu } from "../menu/menu.js";
 import { inicio } from "../menu/funcionesMenu.js";
-import {guerrero,paladin, mago, berserker} from "./RAZAS.js";
-
+import {guerrero, paladin, mago, berserker} from "./RAZAS.js";
 
 
 
@@ -9,7 +8,7 @@ let nombre, validate, personaje;
 
 export const selecClasePj = new Menu('Escoge una clase:',['Guerrero','Paladin','Mago','Berserker', 'volver'])
 export const confirmSeleccion = new Menu('¿Estas seguro de escoger esta clase?',['Si','No, Volver']);
-
+export {personaje}
 
 
 export function nombrePj(){    
@@ -32,25 +31,25 @@ function clasePj(){
     selecClasePj.mostrarOpciones()
     switch(selecClasePj.getUserInput(selecClasePj)){
         case 0:
-            guerrero.stats();
+            guerrero.descripcion();
             guerrero.nombre = nombre;
             personaje = guerrero;
             confirm();    
             break;
         case 1:
-            paladin.stats();
+            paladin.descripcion();
             paladin.nombre = nombre;
             personaje = paladin;
             confirm();
             break;
         case 2:
-            mago.stats();
+            mago.descripcion();
             mago.nombre = nombre;
             personaje = mago;
             confirm();
             break;
         case 3:
-            berserker.stats();
+            berserker.descripcion();
             berserker.nombre = nombre;
             personaje = berserker;
             confirm();
@@ -64,7 +63,7 @@ function confirm(){
     confirmSeleccion.mostrarOpciones();
     switch(confirmSeleccion.getUserInput(confirmSeleccion)){
             case 0:
-            console.log (personaje)            
+            console.log(personaje)
             break
         case 1:
             clasePj();            

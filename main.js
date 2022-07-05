@@ -1,5 +1,9 @@
 import { PantCarga } from "./Comienzo/pantCarga.js";
 import { inicio } from "./menu/funcionesMenu.js";
+import { personaje } from "./Personaje/creacionPersonaje.js";
+import { tutorial } from "../Proyecto-2/Stages/stages.js";
+import { slime } from "./Personaje/RAZAS.js";
+
 
 const pantaCarga = new PantCarga()
 
@@ -21,5 +25,5 @@ const promesa = new Promise (resolve =>{
   promesa.then(result =>{
     pantaCarga.printMsj();  
     inicio();
+    tutorial(personaje, slime)
   })
-
