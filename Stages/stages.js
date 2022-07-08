@@ -1,6 +1,5 @@
-import { Clase } from "../Modules/Clases.js"
-import { personaje } from "../Personaje/creacionPersonaje.js";
 import { dodge } from "../Modules/igbattle.js";
+import {menuStar} from "../menu/menuStart/menuStart.js"
 
 
 let contador = 0
@@ -15,41 +14,58 @@ function tutorial(player, mob){
     console.log("%cCada personaje puede usar sus habilidades cada ciertos turnos, estas seran usadas automaticamente", "color: violet")
     console.log("%c\n¡EMPEZEMOS!\n", "color:yellow")
     alert("")
-    const lucha = setInterval(function attacking(){ 
-        esquivar = dodge()
-        if (contador == player.abilityTurn){
-            player.ability(mob)
-            contador = 0
-        }else if(esquivar === true){
-            console.log("%cEl enemigo esquivo tu ataque", "color:red")
-        }else{
-            player.attack(mob)
-        }
-        if (mob.hp <= 0){
-            console.log("%cHas ganado la batalla", "color:green")
-            clearInterval(lucha)
-            return
-        }
-        console.log(`%cVida del ${mob.nombre}: ${mob.hp}`,`color:blue`)
-        esquivar = dodge()
-        if (esquivar === true){
-            console.log("%cEsquivaste el ataque de tu enemigo","color:green")
-        }else{
-            mob.attack(player)
-        }
-        if (player.hp <= 0){
-            console.log("Has perdido la batalla")
-            clearInterval(lucha)
-            return
-        }
-        console.log(`%cVida de ${player.nombre}: ${player.hp}`,`color:blue`)
-        contador++
-        console.log("**************************************************************************")
+    const luchaTuto = new Promise(resolve =>{
+        const lucha = setInterval(function attacking(){ 
+            esquivar = dodge()
+            if (contador == player.abilityTurn){
+                player.ability(mob)
+                contador = 0
+            }else if(esquivar === true){
+                console.log("%cEl enemigo esquivo tu ataque", "color:red")
+            }else{
+                player.attack(mob)
+            }
+            if (mob.hp <= 0){
+                console.log("%cHas ganado la batalla", "color:green")
+                console.log(`%cVida del ${mob.nombre}: 0`,`color:red`)
+                clearInterval(lucha)                
+                resolve()
+                return;
+            }
+            console.log(`%cVida del ${mob.nombre}: ${mob.hp}`,`color:blue`)
+            esquivar = dodge()
+            if (esquivar === true){
+                console.log("%cEsquivaste el ataque de tu enemigo","color:green")
+            }else{
+                mob.attack(player)
+            }
+            if (player.hp <= 0){
+                console.log("%cHas perdido la batalla","color: red")
+                console.log(`%cVida de ${player.nombre}: 0`,`color:red`)
+                clearInterval(lucha)                
+                resolve()
+                return;
+            }
+            console.log(`%cVida de ${player.nombre}: ${player.hp}`,`color:blue`)
+            contador++
+            console.log("**************************************************************************")
+    
+        }, 1500)
+    });
 
-    }, 1500);
+    luchaTuto.then(resolve =>{
+        console.log("**************************************************************************");
 
-    player.hp = playerHp
-    mob.hp = mobHp
+        player.hp = playerHp;
+        mob.hp = mobHp;
+        menuStar();
+    })
+    
+
+  
 }
 
+
+
+    
 export { tutorial }
