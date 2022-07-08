@@ -18,7 +18,7 @@ const promesa = new Promise (resolve =>{
   console.clear()
   console.log(pantaCarga.pantCarga.slice(0,charPosition))
   charPosition++
-  },250)
+  },200)
   })
 
 

@@ -46,7 +46,7 @@ function tutorial(player, mob){
         contador++
         console.log("**************************************************************************")
 
-    }, 2000);
+    }, 1500);
 
     player.hp = playerHp
     mob.hp = mobHp
