@@ -1,5 +1,6 @@
 import { Menu } from "../menu/menu.js";
-import { inicio } from "../menu/funcionesMenu.js";
+import { menuStar } from "../menu/menuStart/menuStart.js";
+import { inicio } from "../menu/Inicio/inicio.js";
 import {guerrero, paladin, mago, berserker} from "./RAZAS.js";
 
 
@@ -63,7 +64,7 @@ function confirm(){
     confirmSeleccion.mostrarOpciones();
     switch(confirmSeleccion.getUserInput(confirmSeleccion)){
             case 0:
-            console.log(personaje)
+                menuStar();
             break
         case 1:
             clasePj();            
