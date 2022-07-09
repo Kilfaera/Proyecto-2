@@ -12,6 +12,7 @@ function tutorial(player, mob){
     console.log("%cHay un 20% de probabilidades de que tu personaje O el enemigo esquiven los ataques asi que ¡TEN CUIDADO! y suerte ", "color:violet")
     console.log("%cTambien tienes una probabilidad de critico segun tu raza tanto tu como tu enemigo de critico en su ataque fisico. Puedes aumentarla con ciertos objetos", "color:violet")
     console.log("%cCada personaje puede usar sus habilidades cada ciertos turnos, estas seran usadas automaticamente", "color: violet")
+    console.log("%cTu vida volvera a su estado base una vez finalizado cada combate", "color: red")
     console.log("%c\n¡EMPEZEMOS!\n", "color:yellow")
     alert("")
     const luchaTuto = new Promise(resolve =>{
