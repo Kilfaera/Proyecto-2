@@ -7,6 +7,7 @@ class Clase{
         this.ap = ap
         this.crit = crit
         this.abilityTurn = turn
+        this.alive = true
     }
     descripcion(){
         console.log(`%cClase: ${this.clase}\nVida: ${this.hp}\nAtaque: ${this.at}\nPoder de habilidad: ${this.ap}\nTurnos para su habilidad: ${this.abilityTurn}`,"color:yellow")
@@ -14,7 +15,6 @@ class Clase{
 
     attack(enemigo){
         let critico = Math.round(Math.random()*(100-0))
-        console.log(critico)
         if (critico<=this.crit){
             console.log(`%cGOLPE CRITICO DE ${this.nombre}`, `color:red`)
             enemigo.hp -= Math.round(this.at*0.8)

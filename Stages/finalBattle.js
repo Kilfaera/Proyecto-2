@@ -6,7 +6,7 @@ function finalbattle(player, mob){
     let mobHp = mob.hp;
     let esquivar
     let contador = 0
-    console.log("Preparate para la batalla final contra... DIOS")
+    console.log("%cPreparate para la batalla final contra... DIOS","color:red")
         const lucha = setInterval(function attacking(){ 
             esquivar = dodge()
             if (contador == player.abilityTurn){
@@ -33,6 +33,7 @@ function finalbattle(player, mob){
             if (player.hp <= 0){
                 console.log("%cHas perdido la batalla","color: red")
                 console.log(`%cVida de ${player.nombre}: 0`,`color:red`)
+                console.log("%cConsejo: Prueba explorando el mapa (Puede encuentres algo que te ayude a ganar esta batalla)","color:yellow")
                 gameover()
                 clearInterval(lucha)
                 return;
