@@ -1,8 +1,12 @@
-//colocco imports
+import {personaje} from "../Personaje/creacionPersonaje.js"
+import {DIOS, ogro, grifo, zombie, harpia, minotauro} from "../Personaje/RAZAS.js"
+import {finalbattle} from "../Stages/finalBattle.js"
+import {battle} from "../Stages/Battle.js"
+
 //las lineas que tienen comentarios son las que voy a cambiar
-let battleN1 = true, battleN2 = true, battleN3 = true, battleN1W1 = true, battleN1E2 = true
+let battleN1 = true, battleN2 = true, battleN3 = true, battleN1W1 = true, battleN1E2 = true, sword = true
 function Camino(){
-    let where, north = 0, east = 0, west = 0, door, confirm
+    let where, north = 0, east = 0, west = 0, door, confirm, equip
     console.log("Despertaste en un pasillo tetrico, no sabes porque estas aqui pero... Sientes que debes salir aqui...")
 do{
     where = parseInt(prompt("¿A donde quieres ir?\n1. Norte\n2. Sur\n3. Este\n4. Oeste\n"))
@@ -31,7 +35,7 @@ do{
                     console.log("Avanzas hacia el norte")
                     north++
                     if (battleN1 === true){
-                        console.log("zombie")//batalla contra zombie
+                        battle(personaje, zombie)
                         battleN1 = false
                     }else{
                         console.log("Entras al cuarto y ves el cadaver de un zombie")
@@ -51,7 +55,7 @@ do{
                     console.log("Avanzas hacia el norte")
                     north++
                     if(battleN2 === true){
-                        console.log("minotauro")//batalla minotauro
+                        battle(personaje, minotauro)//batalla minotauro
                         battleN2 = false
                     }else{
                         console.log("Entras al cuarto y observas el cadaver del minotauro")
@@ -67,7 +71,7 @@ do{
                     console.log("Avanzas hacia el norte")
                     north++
                     if(battleN3 === true){
-                        console.log("Batalla Harpia")//batalla arpia
+                        battle(personaje, harpia)//batalla arpia
                         battleN3 = false
                     }else{"Observas el cadaver un Harpia en el suelo"}
                 }
@@ -80,6 +84,7 @@ do{
                     if (door == "1"){
                         console.log("Decidiste abrir la puerta y avanzar")
                         north++
+                        finalbattle(personaje, DIOS)
                         confirm = true
                     }else if (door == "2"){
                         console.log("Decidiste no abrir la puerta")
@@ -114,7 +119,7 @@ do{
                     if (east == 2){
                         north--
                         if(battleN1E2 == true){
-                            console.log("Batalla contra grifo")//batalla grifo
+                            battle(personaje, grifo)//batalla grifo
                             battleN1E2 = false
                         }else{
                             console.log("Observas el cadaver gigante del grifo")
@@ -159,7 +164,7 @@ do{
                                 console.log("Decidiste abrir la puerta y avanzar")
                                 east++
                                 if(battleN1E2 == true){
-                                    console.log("Batalla Grifo")//batalla grifo
+                                    battle(personaje, grifo)//batalla grifo
                                     battleN1E2 = false
                                 }else{
                                     console.log("Observas el cadaver del Grifo")
@@ -202,7 +207,7 @@ do{
                                 console.log("Decidiste abrir la puerta y avanzar")
                                 east++
                                 console.log("Encuentras una nota con un extraño codigo")
-                                console.log("0000")
+                                console.log("509")
                                 confirm = true
                             }else if (door == "2"){
                                 console.log("Decidiste no abrir la puerta")
@@ -214,6 +219,7 @@ do{
                         }while(confirm == false)
                     break
                     }
+                }
         break
         case 4:
             switch(north){
@@ -230,7 +236,7 @@ do{
                                 console.log("Decidiste abrir la puerta y avanzar")
                                 west++
                                 if (battleN1W1 == true){
-                                    console.log("Batalla ogro")//batalla contra ogro
+                                    battle(personaje, ogro)//batalla contra ogro
                                     battleN1W1 = false
                                 }else{
                                     console.log("Observas el cadaver gigante del Ogro")
@@ -264,7 +270,7 @@ do{
                     case 1: 
                         east--
                         if(battleN3 == true){
-                            console.log("Batalla harpia")//batalla harpia
+                            battle(personaje, harpia)//batalla harpia
                             battleN3 = false
                         }else{console.log("Observas el cadaver del Harpia")}
                     break
@@ -280,11 +286,36 @@ do{
 
             }
             
-        }
+        break
+        case 509:
+            if (sword == true){
+                console.log("Apareciste en una habitación casi vacia, lo unico que en ella es una espada tan oscura como la noche")
+                equip = parseInt(prompt("¿Quieres equiparla?\n1. Si\n2. No"))
+                if (equip == 1){
+                    personaje.hp+=4000
+                    personaje.at+=2000
+                    personaje.ap+=1000
+                    personaje.crit = 100
+                    sword = false
+                    console.log()
+                }else{console.log("Entendido")}
+            }else{
+                console.log("No hay nada aca")
+            }
+        break
         default: console.log("Escoge una opcion valida")
         break
     }
 }while(north!=4)
+
+console.log(`
+███████╗███████╗██╗     ██╗ ██████╗██╗██████╗  █████╗ ██████╗ ███████╗███████╗
+██╔════╝██╔════╝██║     ██║██╔════╝██║██╔══██╗██╔══██╗██╔══██╗██╔════╝██╔════╝
+█████╗  █████╗  ██║     ██║██║     ██║██║  ██║███████║██║  ██║█████╗  ███████╗
+██╔══╝  ██╔══╝  ██║     ██║██║     ██║██║  ██║██╔══██║██║  ██║██╔══╝  ╚════██║
+██║     ███████╗███████╗██║╚██████╗██║██████╔╝██║  ██║██████╔╝███████╗███████║
+╚═╝     ╚══════╝╚══════╝╚═╝ ╚═════╝╚═╝╚═════╝ ╚═╝  ╚═╝╚═════╝ ╚══════╝╚══════╝                                                                            
+`)
 }
 
 export {Camino}
