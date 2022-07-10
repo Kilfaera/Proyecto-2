@@ -22,5 +22,5 @@ const promesa = new Promise (resolve =>{
   promesa.then(result =>{
     pantaCarga.printMsj();  
     inicio();
-    
+    console.log("../main.js<-------ERROR GRATIS AQUI")//Error de batallas sucediendo despues de esta linea
   })
