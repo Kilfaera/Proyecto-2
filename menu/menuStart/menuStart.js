@@ -7,6 +7,7 @@ import { Camino } from "../../Road/mainPath.js";
 
 export const menuStart = new Menu ('Escoga una opcion:',['Comenzar tutorial','Comenzar juego','volver'])
 
+
 export function menuStar(){
     menuStart.mostrarOpciones();
     switch (menuStart.getUserInput(menuStart)){
@@ -15,6 +16,7 @@ export function menuStar(){
             break;
         case 1:
             Camino()
+            console.log("../menuStart/menuStart.js<-------ERROR GRATIS AQUI")//Error de batallas sucediendo despues de esta linea
             break;
         case 2: 
             inicio()
