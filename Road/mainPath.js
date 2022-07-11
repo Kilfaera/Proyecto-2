@@ -17,7 +17,7 @@ do{
         case 0:
             north=CaminoNorte(north, east)
         break
-        1
+        
         case 1:
             north = CaminoSur(north, east)
         break
