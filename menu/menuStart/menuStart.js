@@ -5,7 +5,7 @@ import { tutorial } from "../../Stages/stages.js";
 import { slime } from "../../Personaje/RAZAS.js";
 import { Camino } from "../../Road/mainPath.js";
 
-export const menuStart = new Menu ('Escoga una opcion:',['Comenzar tutorial','Comenzar juego','volver'])
+export const menuStart = new Menu ('¿Que quieres hacer?',['Comenzar tutorial','Comenzar juego','volver'])
 
 
 export function menuStar(){
