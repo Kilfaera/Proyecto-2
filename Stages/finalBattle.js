@@ -1,3 +1,5 @@
+import { menuStar } from "../menu/menuStart/menuStart.js";
+import { Clase } from "../Modules/Clases.js";
 import { gameover } from "../Modules/gameover.js";
 import { dodge } from "../Modules/igbattle.js";
 
@@ -20,6 +22,7 @@ function finalbattle(player, mob){
             if (mob.hp <= 0){
                 console.log("%cHas ganado la batalla", "color:green")
                 console.log(`%cVida del ${mob.nombre}: 0`,`color:red`)
+                mob.alive = false
                 clearInterval(lucha)
                 return;
             }
@@ -36,6 +39,8 @@ function finalbattle(player, mob){
                 console.log("%cConsejo: Prueba explorando el mapa (Puede encuentres algo que te ayude a ganar esta batalla)","color:yellow")
                 gameover()
                 clearInterval(lucha)
+                Clase.alive = true
+                menuStar()
                 return;
             }
             console.log(`%cVida de ${player.nombre}: ${player.hp}`,`color:blue`)

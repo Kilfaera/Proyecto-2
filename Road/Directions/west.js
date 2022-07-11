@@ -38,7 +38,6 @@ let north = norte, east = este
                     east--
                     if(harpia.alive === true){
                         battle(personaje, harpia)//batalla harpia
-                        battleN3 = false
                     }else{console.log("%cObservas el cadaver del Harpia","color:blue")}
                 break
                 case 2: 

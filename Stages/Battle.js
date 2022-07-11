@@ -1,5 +1,7 @@
+import { menuStar } from "../menu/menuStart/menuStart.js";
 import { gameover } from "../Modules/gameover.js";
 import { dodge } from "../Modules/igbattle.js";
+import { Clase } from "../Modules/Clases.js";
 
 function battle(player, mob){
     let playerHp = player.hp
@@ -19,6 +21,7 @@ function battle(player, mob){
             }
             if (mob.hp <= 0){
                 console.log(`%cVida del ${mob.nombre}: 0`,`color:red`)
+                mob.alive = false;
                 clearInterval(lucha)
             }
             console.log(`%cVida del ${mob.nombre}: ${mob.hp}`,`color:blue`)
@@ -34,6 +37,8 @@ function battle(player, mob){
                 console.log("%cConsejo: Prueba explorando el mapa (Puede encuentres algo que te ayude a ganar esta batalla)","color:yellow")
                 gameover()
                 clearInterval(lucha)
+                Clase.alive = true
+                menuStar()
                 return;
             }
             console.log(`%cVida de ${player.nombre}: ${player.hp}`,`color:blue`)
@@ -43,6 +48,5 @@ function battle(player, mob){
         }, 1500)
             console.log("**************************************************************************");
             player.hp = playerHp;
-            mob.alive = false;
     }
 export {battle}
