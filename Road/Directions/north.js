@@ -36,7 +36,7 @@ export function CaminoNorte(north, east){
                     case 0:
                         console.log("%cAvanzas hacia el norte","color:green")
                         north++
-                        if(minotauro.alive === true){
+                        if (minotauro.alive === true){
                             battle(personaje, minotauro)//batalla minotauro
                         }else{
                             console.log("%cEntras al cuarto y observas el cadaver del minotauro","color:blue")
@@ -60,8 +60,8 @@ export function CaminoNorte(north, east){
                 }else{
                     console.log("%cAvanzas hacia el norte","color:green")
                     north++
-                    if(harpia.alive === true){
-                        battle(personaje, harpia)//batalla arpia
+                    if(harpia.alive == true){
+                        battle(personaje, harpia)//batalla Harpia
                     }else{
                         console.log("%cObservas el cadaver un Harpia en el suelo","color:blue")
                     }

@@ -16,7 +16,7 @@ export function menuStar(){
             break;
         case 1:
             Camino()
-            break;
+        break;
         case 2: 
             inicio()
     }

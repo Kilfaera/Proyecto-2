@@ -44,6 +44,7 @@ function finalbattle(player, mob){
     
         }, 1500) 
         player.hp = playerHp;
+        
     }
 
 export {finalbattle}

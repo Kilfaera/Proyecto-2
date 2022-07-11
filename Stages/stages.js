@@ -14,7 +14,7 @@ function tutorial(player, mob){
     console.log("%cCada personaje puede usar sus habilidades cada ciertos turnos, estas seran usadas automaticamente", "color: violet")
     console.log("%cTu vida volvera a su estado base una vez finalizado cada combate", "color: red")
     console.log("%c\n¡EMPEZEMOS!\n", "color:yellow")
-    alert("")
+    prompt(`PREPARATE PARA EL COMBATE CONTRA ${mob.nombre}`)
     const luchaTuto = new Promise(resolve =>{
         const lucha = setInterval(function attacking(){ 
             esquivar = dodge()
@@ -60,9 +60,6 @@ function tutorial(player, mob){
         mob.hp = mobHp;
         menuStar();
     })
-    
-
-  
 }
 
 

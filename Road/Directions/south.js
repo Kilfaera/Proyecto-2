@@ -65,6 +65,9 @@ export function CaminoSur(north, east){
                     console.log("%cAvanzas hacia el sur","color:green")
                     console.log("%cUn cuarto con una extraña pintura","color:blue")
                 break
+                case 3:
+                    console.log("%cHay una pared, No puedes avanzar", "color: red")
+                break
             }
         break
     }
