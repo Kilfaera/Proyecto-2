@@ -40,7 +40,9 @@ function battle(player, mob){
             contador++
             console.log("**************************************************************************")
     
-        }, 1500) 
-        player.hp = playerHp;
-}
+        }, 1500)
+            console.log("**************************************************************************");
+            player.hp = playerHp;
+            mob.alive = false;
+    }
 export {battle}

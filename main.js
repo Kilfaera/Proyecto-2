@@ -24,3 +24,5 @@ const promesa = new Promise (resolve =>{
     inicio();
     console.log("../main.js<-------ERROR GRATIS AQUI")//Error de batallas sucediendo despues de esta linea
   })
+
+console.log("<------o aca")

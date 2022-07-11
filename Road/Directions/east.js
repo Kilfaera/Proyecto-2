@@ -20,8 +20,8 @@ export function CaminoEste(north, east){
                     switch(Door.getUserInput(Door)){
                         case 0:
                             console.log("%cDecidiste abrir la puerta y avanzar","color:green")
+                            east++
                             if(grifo.alive === true){
-                                east++
                                 battle(personaje, grifo)//batalla grifo
                             }else{
                                 console.log("%cObservas el cadaver del Grifo","color:blue")

@@ -1,5 +1,6 @@
 import { personaje } from "../../Personaje/creacionPersonaje.js"
 import { harpia } from "../../Personaje/RAZAS.js"
+import { battle } from "../../Stages/Battle.js"
 
 export function CaminoOeste(norte, este){
 let north = norte, east = este

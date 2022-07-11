@@ -11,11 +11,11 @@ export const berserker = new Berserker ("", 'Berserker', 600, 140, 0, 40, 3);
 
 export const slime = new Clase("slime", "monstruo", 700, 70, 0, 20)
 
-const zombie = new Clase("Zombie", "zombie", "700", 50, 0, 20, 100)
-const grifo = new Clase("Grifo", "", 1000, 60, 0, 20, 100)
-const minotauro = new Clase("Minotauro", "", 1200, 40, 0, 30, 100)
-const harpia = new Clase("Harpia", "", 800, 60, 0, 30, 100)
-const ogro = new Clase("Ogro", "", 1300, 70, 0, 40, 100)
+const zombie = new Clase("ZOMBIE", "", "700", 50, 0, 20, 100, true)
+const grifo = new Clase("GRIFO", "", 1000, 60, 0, 20, 100, true)
+const minotauro = new Clase("MINOTAURO", "", 1200, 40, 0, 30, 100, true)
+const harpia = new Clase("HARPIA", "", 800, 60, 0, 30, 100, true)
+const ogro = new Clase("OGRO", "", 1300, 70, 0, 40, 100, true)
 const DIOS = new Clase("DIOS", "DIOS", 10000, 500, 200, 60, 10)
 
 export {zombie, grifo, minotauro, harpia, ogro, DIOS}
