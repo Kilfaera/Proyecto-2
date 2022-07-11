@@ -3,7 +3,9 @@ import { battle } from "../../Stages/Battle.js"
 import { personaje } from "../../Personaje/creacionPersonaje.js"
 import { DIOS, zombie, minotauro, harpia } from "../../Personaje/RAZAS.js"
 import { Menu } from "../../menu/menu.js"
+
 export const Door = new Menu ('¿Deseas abrir la puerta y avanzar?:',['Si','No'])
+
 let door
 export function CaminoNorte(north, east){
     switch(north){
