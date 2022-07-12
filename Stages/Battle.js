@@ -20,6 +20,7 @@ function battle(player, mob){
                 player.attack(mob)
             }
             if (mob.hp <= 0){
+                console.log("%cHas Ganado la batalla", "color:green")
                 console.log(`%cVida del ${mob.nombre}: 0`,`color:red`)
                 mob.alive = false;
                 clearInterval(lucha)

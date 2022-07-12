@@ -6,8 +6,9 @@ import { Clase } from "../Clases.js"
     }
 
     ability(enemigo){
-        console.log("%cUsaste la habilidad \"FURIA IMPARABLE\"","color:red")
-        enemigo.hp -= Math.round(this.at * 3)
+        const fury = Math.round(this.at * 3)
+        enemigo.hp -= fury
+        console.log(`%cUsaste la habilidad "FURIA IMPARABLE". Hiciste ${fury} de daño`,`color:red`)
         let selfdamage = Math.round(this.hp*0.3)
         this.hp -= selfdamage
         console.log(`%cRecibiste ${selfdamage} de daño por usar "FURIA IMPARABLE"`,`color:red`)

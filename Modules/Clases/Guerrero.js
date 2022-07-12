@@ -6,8 +6,9 @@ class Guerrero extends Clase {
     }
 
     ability(enemigo){
-        console.log("%cUsaste la habilidad \"VALOR\"", "color:orange")
-        enemigo.hp -= Math.round(this.at * 2)
+        let valor = Math.round(this.at * 2)
+        console.log(`%cUsaste la habilidad "VALOR". Hiciste ${valor} de daño`, `color:orange`)
+        enemigo.hp -= valor
     }
 } 
 export {Guerrero}

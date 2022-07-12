@@ -10,7 +10,7 @@ class Clase{
         this.alive = true
     }
     descripcion(){
-        console.log(`%cClase: ${this.clase}\nVida: ${this.hp}\nAtaque: ${this.at}\nPoder de habilidad: ${this.ap}\nProbabilidad de critico: ${this.crit}%\nTurnos para su habilidad: ${this.abilityTurn}`,"color:yellow")
+        console.log(`%cClase: ${this.clase}\nVida: ${this.hp}\nAtaque: ${this.at}\nPoder de habilidad: ${this.ap}\nProbabilidad de critico: ${this.crit}%\nTurnos para su habilidad: ${this.abilityTurn}`,"color:#572364")
     }
 
     attack(enemigo){

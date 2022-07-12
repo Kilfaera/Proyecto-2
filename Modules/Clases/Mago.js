@@ -6,8 +6,9 @@ class Mago extends Clase {
     }
 
     ability(enemigo){
-        console.log("%cUsaste la habilidad \"BOLA DE FUEGO\"", "color:orange")
-        enemigo.hp -= Math.round(this.ap * 2)
+        let fire = Math.round(this.ap * 2)
+        console.log(`%cUsaste la habilidad "BOLA DE FUEGO". Hiciste ${fire} de daño`, `color:orange`)
+        enemigo.hp -= fire
     }
 }
 export {Mago}
