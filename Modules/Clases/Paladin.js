@@ -6,8 +6,9 @@ class Paladin extends Clase {
     }
 
     ability(enemigo){
-        console.log("%cUsaste la habilidad \"PERSEVERANCIA\"","color:yellow")
-        this.hp += this.ap*5
+        let perseverance = this.ap*5
+        console.log(`%cUsaste la habilidad "PERSEVERANCIA". Te curaste ${perseverance} de vida`,`color:yellow`)
+        this.hp += perseverance
     }
 }
 export {Paladin}
